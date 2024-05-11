@@ -8,6 +8,8 @@ public class CharacterAnimationController : AnimationController
 
     private readonly float magnitudeThreshold = 0.5f;
 
+    [SerializeField] private CharacterStatHandler characterStatHandler;
+
     protected override void Awake()
     {
         base.Awake();
@@ -17,7 +19,7 @@ public class CharacterAnimationController : AnimationController
     {
         controller.OnMoveEvent += Move;
 
-        animator.SetInteger(characterType, 1);
+        animator.SetInteger(characterType, (int)characterStatHandler.CurrentStat.characterType);
     }
 
     private void Move(Vector2 direction)
