@@ -22,5 +22,13 @@ public class Player : MonoBehaviour
     {
         text.text = characterStatHandler.CurrentStat.name;
         spriteRenderer.sprite = sprites[(int)characterStatHandler.CurrentStat.characterType];
+
+        switch (characterStatHandler.CurrentStat.characterType)
+        {
+            case CharacterType.Main:
+                break;
+            case CharacterType.Knight:
+                break;
+        }
     }
 }

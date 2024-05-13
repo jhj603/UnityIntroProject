@@ -7,11 +7,16 @@ public class CharacterBtn : MonoBehaviour
 {
     public CharacterType CharacterType { get; set; }
     
-    [SerializeField] private Image characterImg;
+    private Image[] characterImg;
+
+    private void Awake()
+    {
+        characterImg = GetComponentsInChildren<Image>();
+    }
 
     private void Start()
     {
-        characterImg.sprite = CreateManager.Instance.sprites[(int)CharacterType];
+        characterImg[1].sprite = CreateManager.Instance.sprites[(int)CharacterType];
     }
 
     public void OnClick()
