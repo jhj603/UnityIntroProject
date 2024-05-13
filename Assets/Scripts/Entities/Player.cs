@@ -41,4 +41,34 @@ public class Player : MonoBehaviour
     {
         camera.transform.position = transform.position + camOffset;
     }
+
+    public void Initialize()
+    {
+        if (PlayerPrefs.HasKey("playerName"))
+        {
+            characterStatHandler.CurrentStat.name = PlayerPrefs.GetString("playerName");
+            characterStatHandler.CurrentStat.characterType = (CharacterType)PlayerPrefs.GetInt("playerType");
+        }
+    }
+
+    public void ChangePlayerName(string name)
+    {
+        characterStatHandler.name = name;
+
+        text.text = characterStatHandler.name;
+    }
+
+    public void ChangePlayerType(CharacterType type)
+    {
+        characterStatHandler.CurrentStat.characterType = type;
+        spriteRenderer.sprite = sprites[(int)characterStatHandler.CurrentStat.characterType];
+
+        switch (characterStatHandler.CurrentStat.characterType)
+        {
+            case CharacterType.Main:
+                break;
+            case CharacterType.Knight:
+                break;
+        }
+    }
 }

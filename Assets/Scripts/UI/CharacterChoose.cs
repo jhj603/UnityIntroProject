@@ -6,12 +6,13 @@ using UnityEngine.UIElements;
 
 public class CharacterChoose : MonoBehaviour
 {
-    [SerializeField] private CreateManager createManager;
     [SerializeField] private GameObject characterBtn;
+
+    [SerializeField] private List<Sprite> sprites = new List<Sprite>((int)CharacterType.Knight);
 
     void Start()
     {
-        for (int i = 0; i < createManager.sprites.Count; ++i)
+        for (int i = 0; i < sprites.Count; ++i)
         {
             GameObject goCharacterBtn = Instantiate(characterBtn, this.transform);
 
@@ -19,6 +20,7 @@ public class CharacterChoose : MonoBehaviour
             RectTransform[] ImgCharacterBtn = goCharacterBtn.GetComponentsInChildren<RectTransform>();
 
             cbCharacterBtn.CharacterType = (CharacterType)i;
+            cbCharacterBtn.SettingImg(sprites[i]);
 
             switch (cbCharacterBtn.CharacterType)
             {

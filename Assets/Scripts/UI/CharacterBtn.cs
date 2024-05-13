@@ -14,13 +14,18 @@ public class CharacterBtn : MonoBehaviour
         characterImg = GetComponentsInChildren<Image>();
     }
 
-    private void Start()
-    {
-        characterImg[1].sprite = CreateManager.Instance.sprites[(int)CharacterType];
-    }
-
     public void OnClick()
     {
         CreateManager.Instance.SelectCharacter(CharacterType);
+    }
+
+    public void OnClickInGame()
+    {
+        GameManager.Instance.CloseShowSelectCharacterBtn(CharacterType);
+    }
+
+    public void SettingImg(Sprite sprite)
+    {
+        characterImg[1].sprite = sprite;
     }
 }

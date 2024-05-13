@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject NPC;
     [SerializeField] private TMP_Text timeTxt;
+    [SerializeField] private GameObject changeName;
+    [SerializeField] private GameObject selectCharacter;
 
-    private CharacterStatHandler characterStatHandler;
+    private GameObject player;
+    private Player scPlayer;
 
     private void Awake()
     {
@@ -22,19 +25,38 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Instantiate(Player);
+        player = Instantiate(Player);
 
-        characterStatHandler = Player.GetComponent<CharacterStatHandler>();
-
-        if (PlayerPrefs.HasKey("playerName"))
-        {
-            characterStatHandler.CurrentStat.name = PlayerPrefs.GetString("playerName");
-            characterStatHandler.CurrentStat.characterType = (CharacterType)PlayerPrefs.GetInt("playerType");
-        }
+        scPlayer = player.GetComponent<Player>();
+        scPlayer.Initialize();
     }
 
     private void Update()
     {
         timeTxt.text = DateTime.Now.ToString(("HH:mm"));
+    }
+
+    public void OnClickShowChangeNameBtn()
+    {
+        changeName.SetActive(true);
+    }
+
+    public void CloseShowChangeNameBtn(string name)
+    {
+        scPlayer.ChangePlayerName(name);
+
+        changeName.SetActive(false);
+    }
+
+    public void OnClickShowSelectCharacterBtn()
+    {
+        selectCharacter.SetActive(true);
+    }
+
+    public void CloseShowSelectCharacterBtn(CharacterType type)
+    {
+        scPlayer.ChangePlayerType(type);
+
+        selectCharacter.SetActive(false);
     }
 }
