@@ -63,6 +63,9 @@ public class Player : MonoBehaviour
         characterStatHandler.CurrentStat.characterType = type;
         spriteRenderer.sprite = sprites[(int)characterStatHandler.CurrentStat.characterType];
 
+        CharacterAnimationController controller = gameObject.GetComponent<CharacterAnimationController>();
+        controller.ChangeCharacter();
+
         switch (characterStatHandler.CurrentStat.characterType)
         {
             case CharacterType.Main:

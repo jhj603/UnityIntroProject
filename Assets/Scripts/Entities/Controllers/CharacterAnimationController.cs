@@ -26,4 +26,9 @@ public class CharacterAnimationController : AnimationController
     {
         animator.SetBool(isWalking, direction.magnitude > magnitudeThreshold);
     }
+
+    public void ChangeCharacter()
+    {
+        animator.SetInteger(characterType, (int)characterStatHandler.CurrentStat.characterType);
+    }
 }
