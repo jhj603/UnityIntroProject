@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private TMP_Text text;
     [SerializeField] private List<Sprite> sprites = new List<Sprite>((int)CharacterType.Knight);
     [SerializeField] private Vector3 camOffset;
+    [SerializeField] private LayerMask levelCollisionLayer;
 
     private CharacterStatHandler characterStatHandler;
     private SpriteRenderer spriteRenderer;
@@ -73,5 +74,18 @@ public class Player : MonoBehaviour
             case CharacterType.Knight:
                 break;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (IsLayerMatched(levelCollisionLayer.value, collision.gameObject.layer))
+        {
+            //GameManager.Instance.
+        }
+    }
+
+    private bool IsLayerMatched(int value, int layer)
+    {
+        return value == (value | 1 << layer);
     }
 }

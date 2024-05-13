@@ -10,6 +10,9 @@ public class CharacterAnimationController : AnimationController
 
     [SerializeField] private CharacterStatHandler characterStatHandler;
 
+    [SerializeField] private RuntimeAnimatorController mainController;
+    [SerializeField] private RuntimeAnimatorController knightController;
+
     protected override void Awake()
     {
         base.Awake();
@@ -29,6 +32,9 @@ public class CharacterAnimationController : AnimationController
 
     public void ChangeCharacter()
     {
-        animator.SetInteger(characterType, (int)characterStatHandler.CurrentStat.characterType);
+        if (CharacterType.Main == characterStatHandler.CurrentStat.characterType)
+            animator.runtimeAnimatorController = mainController;
+        else
+            animator.runtimeAnimatorController = knightController;
     }
 }
