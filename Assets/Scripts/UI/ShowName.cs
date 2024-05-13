@@ -28,4 +28,22 @@ public class ShowName : MonoBehaviour
             goText.GetComponent<TMP_Text>().text = csGameObject.CurrentStat.name;
         }
     }
+
+    public void ShowNames()
+    {
+        List<GameObject> characterList = GameManager.Instance.CharacterList;
+
+        int i = 0;
+
+        foreach (Transform child in this.transform)
+        {
+            GameObject goText = child.gameObject;
+
+            CharacterStatHandler csGameObject = characterList[i].GetComponent<CharacterStatHandler>();
+
+            goText.GetComponent<TMP_Text>().text = csGameObject.CurrentStat.name;
+
+            ++i;
+        }
+    }
 }

@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject changeName;
     [SerializeField] private GameObject selectCharacter;
     [SerializeField] private GameObject attendants;
+    [SerializeField] private GameObject gridAttendants;
+    [SerializeField] private GameObject talkUI;
+    [SerializeField] private GameObject talkingUI;
+    [SerializeField] private GameObject menuUI;
 
     private GameObject player;
     private GameObject npc;
@@ -76,11 +80,57 @@ public class GameManager : MonoBehaviour
 
     public void OnClickShowAttendants()
     {
-        attendants.SetActive(true);
+        if (!attendants.active)
+        {
+            gridAttendants.GetComponent<ShowName>().ShowNames();
+
+            attendants.SetActive(true);
+        }
     }
 
     public void CloseShowAttendants()
     {
         attendants.SetActive(false);
+    }
+
+    public void ShowTalkBackGround(string name)
+    {
+        TMP_Text text = talkUI.GetComponentInChildren<TMP_Text>();
+        text.text = name;
+
+        talkUI.SetActive(true);
+    }
+
+    public void CloseTalkBackGround()
+    {
+        if (talkingUI.active)
+            talkingUI.SetActive(false);
+
+        if (!menuUI.active)
+            menuUI.SetActive(true);
+
+        talkUI.SetActive(false);
+    }
+
+    public void ShowTalkingBackGround()
+    {
+        if (talkUI.active)
+            talkUI.SetActive(false);
+
+        if (menuUI.active)
+            menuUI.SetActive(false);
+
+        talkingUI.SetActive(true);
+    }
+
+    public void CloseTalkingBackGround()
+    {
+        if (!talkUI.active)
+            talkUI.SetActive(true);
+
+        if (!menuUI.active)
+            menuUI.SetActive(true);
+
+        talkingUI.SetActive(false);
     }
 }

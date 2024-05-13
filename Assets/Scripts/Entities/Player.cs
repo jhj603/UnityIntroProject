@@ -36,6 +36,9 @@ public class Player : MonoBehaviour
             case CharacterType.Knight:
                 break;
         }
+
+        Canvas canvas = GetComponentInChildren<Canvas>();
+        canvas.worldCamera = camera;
     }
 
     private void LateUpdate()
@@ -54,9 +57,9 @@ public class Player : MonoBehaviour
 
     public void ChangePlayerName(string name)
     {
-        characterStatHandler.name = name;
+        characterStatHandler.CurrentStat.name = name;
 
-        text.text = characterStatHandler.name;
+        text.text = characterStatHandler.CurrentStat.name;
     }
 
     public void ChangePlayerType(CharacterType type)
@@ -80,7 +83,16 @@ public class Player : MonoBehaviour
     {
         if (IsLayerMatched(levelCollisionLayer.value, collision.gameObject.layer))
         {
-            //GameManager.Instance.
+            CharacterStatHandler collisionInfo = collision.gameObject.GetComponent<CharacterStatHandler>();
+            GameManager.Instance.ShowTalkBackGround(collisionInfo.CurrentStat.name);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (IsLayerMatched(levelCollisionLayer.value, collision.gameObject.layer))
+        {
+            GameManager.Instance.CloseTalkBackGround();
         }
     }
 
