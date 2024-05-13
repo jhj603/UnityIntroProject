@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("playerName"))
         {
             characterStatHandler.CurrentStat.name = PlayerPrefs.GetString("playerName");
+            characterStatHandler.CurrentStat.characterType = (CharacterType)PlayerPrefs.GetInt("playerType");
         }
     }
 }
