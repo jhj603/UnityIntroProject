@@ -39,7 +39,21 @@
 
   * 선택 요구사항
     1. 시간 표시
+
+       ![2024-05-14 12-43-48_10](https://github.com/jhj603/UnityIntroProject/assets/82034869/b070b70b-4e95-4be1-ba69-5ee35f3c4ac0)
+
     2. 인게임 이름 바꾸기
+
+       ![2024-05-14 12-43-48_11](https://github.com/jhj603/UnityIntroProject/assets/82034869/bc21cebe-33df-446e-bdcb-e6a032eafb54)
+
     3. 참석자 표시
+   
+       ![2024-05-14 12-43-48_13](https://github.com/jhj603/UnityIntroProject/assets/82034869/98372127-7b3e-4e18-87e1-73336b0e74e9)
+
     4. 인게임 캐릭터 바꾸기
+   
+       ![2024-05-14 12-43-48_14](https://github.com/jhj603/UnityIntroProject/assets/82034869/84313194-4aa6-4bc9-8a5a-b716cd2dbaa6)
+
     5. NPC 대화
+   
+       ![2024-05-14 12-43-48_16](https://github.com/jhj603/UnityIntroProject/assets/82034869/39555b3e-e75f-4cd2-b370-07b8140d8fd5)
