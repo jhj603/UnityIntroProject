@@ -12,12 +12,25 @@
 # 주요 기능
  * 필수 요구사항
    1. 캐릭터 만들기
+
+       ![2024-05-14 12-43-48_2](https://github.com/jhj603/UnityIntroProject/assets/82034869/b7f2f1a7-a62f-4ff5-bcde-f8ada04fc6f3)
+
    2. 캐릭터 이동
-   3. 방 만들기
+  
+      ![2024-05-14 12-43-48_6](https://github.com/jhj603/UnityIntroProject/assets/82034869/eac33d6a-8c4f-49b4-919e-f75067cc6f4b)
+
+    3. 방 만들기
     4. 카메라 따라가기
     5. 캐릭터 애니메이션 추가
     6. 이름 입력 시스템
+       
+       ![2024-05-14 12-43-48](https://github.com/jhj603/UnityIntroProject/assets/82034869/f2fbbf03-7c20-4085-bb25-49fa4132f55b)
+
     7. 캐릭터 선택 시스템
+  
+       ![2024-05-14 12-43-48_1](https://github.com/jhj603/UnityIntroProject/assets/82034869/7376556d-63cd-43e7-abb2-b8b36879deb3)
+       
+
   * 선택 요구사항
     1. 시간 표시
     2. 인게임 이름 바꾸기
