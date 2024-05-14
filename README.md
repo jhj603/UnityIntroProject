@@ -21,7 +21,13 @@
 
     3. 방 만들기
     4. 카메라 따라가기
+       
+       ![2024-05-14 12-43-48_7](https://github.com/jhj603/UnityIntroProject/assets/82034869/23f31d67-7a5e-44ab-bdd4-305ccf3d3223)
+
     5. 캐릭터 애니메이션 추가
+       
+       ![2024-05-14 12-43-48_9](https://github.com/jhj603/UnityIntroProject/assets/82034869/78fcc856-985f-4985-aef7-6edcc16fe387)
+
     6. 이름 입력 시스템
        
        ![2024-05-14 12-43-48](https://github.com/jhj603/UnityIntroProject/assets/82034869/f2fbbf03-7c20-4085-bb25-49fa4132f55b)
