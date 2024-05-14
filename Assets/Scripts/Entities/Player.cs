@@ -52,6 +52,9 @@ public class Player : MonoBehaviour
         {
             characterStatHandler.CurrentStat.name = PlayerPrefs.GetString("playerName");
             characterStatHandler.CurrentStat.characterType = (CharacterType)PlayerPrefs.GetInt("playerType");
+
+            CharacterAnimationController controller = gameObject.GetComponent<CharacterAnimationController>();
+            controller.ChangeCharacter();
         }
     }
 
