@@ -20,6 +20,9 @@
       ![2024-05-14 12-43-48_6](https://github.com/jhj603/UnityIntroProject/assets/82034869/eac33d6a-8c4f-49b4-919e-f75067cc6f4b)
 
     3. 방 만들기
+  
+       ![image](https://github.com/jhj603/UnityIntroProject/assets/82034869/054be39a-b2d6-4b97-bfe2-6a5b6c59755c)
+
     4. 카메라 따라가기
        
        ![2024-05-14 12-43-48_7](https://github.com/jhj603/UnityIntroProject/assets/82034869/23f31d67-7a5e-44ab-bdd4-305ccf3d3223)
